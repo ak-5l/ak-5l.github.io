@@ -17,13 +17,13 @@ const controls = {
 };
 
 const colors = {
-  background: "#050c14",
-  grid: "#132434",
-  star: "#ffd45c",
-  starGlow: "rgba(255, 212, 92, 0.15)",
-  planet: "#58d6ff",
-  trail: "rgba(88, 214, 255, 0.72)",
-  dust: "rgba(237, 246, 255, 0.42)"
+  background: "#0a1466",
+  grid: "#16239a",
+  star: "#f3ecd9",
+  starGlow: "rgba(243, 236, 217, 0.12)",
+  planet: "#e0b45a",
+  trail: "rgba(224, 180, 90, 0.75)",
+  dust: "rgba(243, 236, 217, 0.35)"
 };
 
 const state = {
