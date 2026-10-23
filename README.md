@@ -4,7 +4,9 @@ Personal portfolio of **Akhilesh Thapa**, a computer science student at Kathmand
 
 **Live site: [akhileshthapa.me](https://akhileshthapa.me)**
 
-<!-- Add a screenshot later: ![Site preview](assets/img/preview.png) -->
+![Site preview](assets/screenshots/1.png)
+
+![Site preview](assets/screenshots/2.png)
 
 ## What's on the site
 
