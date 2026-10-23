@@ -1,35 +1,60 @@
 # akhileshthapa.me
 
-Personal site, hosted on GitHub Pages. Plain HTML/CSS/JS, **no build step, no dependencies**.
+Personal portfolio of **Akhilesh Thapa**, a computer science student at Kathmandu University. It documents what I build while learning, one working project at a time.
 
-## Structure
+**Live site: [akhileshthapa.me](https://akhileshthapa.me)**
+
+<!-- Add a screenshot later: ![Site preview](assets/img/preview.png) -->
+
+## What's on the site
+
+- **Vector Gravity Sandbox**: a two-body gravity simulation. The original is written in Python and Pygame ([`gravity.py`](projects/gravity-sandbox/gravity.py)); the site has a playable browser port of the same physics where you can change gravity, star mass and launch speed and watch the orbit react.
+- More projects will be added over time.
+
+## Built with
+
+- HTML, CSS and vanilla JavaScript. No framework, no build step, no dependencies.
+- A hand-written neo-brutalist component set (thick borders, hard shadows, bold colours) driven by CSS variables.
+- Hosted on GitHub Pages with a custom domain.
+
+The design goals were simple: easy to read, easy to extend, and easy for a beginner to maintain.
+
+## Run it locally
+
+```bash
+git clone https://github.com/ak-5l/ak-5l.github.io.git
+cd ak-5l.github.io
+python -m http.server 8000
 ```
-index.html                      page shell + static text (hero, about) + SEO tags
-assets/css/theme.css            design tokens + the reusable neo-brutalist components (.nb-*)
-assets/css/site.css             page layout only
-assets/js/data/content.js       ALL editable content: projects + contact links
-assets/js/render.js             turns content.js into HTML (rarely needs edits)
-assets/js/demos/<name>.js       one file per interactive demo
-projects/<project-id>/          source files each project offers for download
-CNAME, google…html              domain + Search Console verification: do not delete
+
+Then open http://localhost:8000. You can also open `index.html` directly in a browser.
+
+To run the original Python simulator:
+
+```bash
+pip install pygame
+python projects/gravity-sandbox/gravity.py
 ```
 
-## Add a project
-1. Make a folder `projects/<project-id>/` for any downloadable files.
-2. In `assets/js/data/content.js`, copy the project block to the **top** of `PROJECTS` and edit it.
-   Fields: `id` (unique, lowercase, no spaces) · `title` · `status` · `color` · `stack[]` · `summary` · `notes[]` · `snippet{file,code}` · `links[{label,href,download?,color}]` · `demo` (optional).
-3. Commit and push. Nothing else to touch.
+Controls: edit the values in the side panel and click **Apply & Reset**; press **Space** to pause.
 
-## Add an interactive demo (optional)
-Create `assets/js/demos/<name>.js` registering `window.DEMOS.<name> = function (root) { … }`
-(copy `gravity.js`), add a `<script>` tag for it in `index.html` above `render.js`, then set `demo: "<name>"` in the project.
+## Project structure
 
-## Change the look
-Edit the variables at the top of `theme.css` (colors, border width, shadow offset, fonts). Components: `.nb-btn`, `.nb-pill`,
-`.nb-sticker`, `.nb-card`, `.nb-range`, `.nb-switch`, `.nb-kbd`, `.nb-code`; colors via `.is-coral|purple|teal|yellow|blue|orange|pink`.
+```
+index.html                  page shell, intro and about text
+assets/css/theme.css        design tokens and reusable components
+assets/css/site.css         page layout
+assets/js/data/content.js   projects and contact links (the one file to edit for content)
+assets/js/render.js         renders content.js into the page
+assets/js/demos/            interactive demos, one file each
+projects/                   downloadable source for each project
+docs/MAINTAINING.md         how to add projects, add demos and change the look
+```
 
-## Preview locally
-Open `index.html`, or run `python -m http.server` and visit http://localhost:8000.
+## Contributing
 
-## When this outgrows one page
-Around 5+ projects, give each its own page under `projects/<id>/index.html` and keep `content.js` as the index.
+This is a personal site, so I'm not looking for code contributions. If you spot a bug, a typo or an accessibility problem, please [open an issue](../../issues).
+
+## Contact
+
+GitHub: [@ak-5l](https://github.com/ak-5l)
